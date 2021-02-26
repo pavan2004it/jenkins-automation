@@ -3,6 +3,9 @@ pipeline{
     stages {
         stage("build"){
             steps{
+                ansiblePlaybook('ansiblePlays/sample.yaml'){
+                    inventoryPath('inventory') 
+                }
                 echo "Hello world"
             }
         }
@@ -12,7 +15,6 @@ pipeline{
                 echo "Hello test"
             }
         }
-
         stage("prod"){
             steps{
                 echo "Hello prod"
