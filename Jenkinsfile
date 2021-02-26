@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         NEW_VERSION = '1.3.0'
-        SERVER_CREDENTIALS = credentials('server-credentials')
+        // SERVER_CREDENTIALS = credentials('server-credentials')
     }
     stages {
         stage("build"){
@@ -22,7 +22,12 @@ pipeline {
         stage("test"){
             steps{
                 echo "${NEW_VERSION}"
-                echo "${SERVER_CREDENTIALS}"
+                withCredentials([
+                    usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
+                ]) {
+                    echo "${USER}"
+                }
+                // echo "${SERVER_CREDENTIALS}"
             }
         }
         
