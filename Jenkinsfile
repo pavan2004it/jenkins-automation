@@ -23,7 +23,7 @@ pipeline {
             steps{
                 echo "${NEW_VERSION}"
                 withCredentials([
-                    usernamePassword(credentialsId: 'server-credentials', usernameVariable: USER)
+                    usernamePassword(credentialsId: 'server-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')
                 ]) {
                     echo "${USER}"
                 }
