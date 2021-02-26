@@ -5,6 +5,7 @@ pipeline{
             steps{
                 echo "Executing Playbook"
                 ansiblePlaybook(
+                    installaton: 'ansible',
                     inventory: 'inventory',
                     playbook: 'ansiblePlays/sample.yaml',
                     colorized: true
