@@ -14,16 +14,6 @@ pipeline {
                 }
             }
         }
-
-        stage("test"){
-            steps{
-                echo "Hello test"
-            }
-        }
-        stage("prod"){
-            steps{
-                echo "Hello prod"
-            }
-        }
+        
     }
 }
