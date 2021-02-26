@@ -5,8 +5,8 @@ pipeline{
             steps{
                 echo "Executing Playbook"
                 ansiblePlaybook(
-                    inventory: '/Users/pavankumar/.jenkins/workspace/Ansible-Project/inventory',
-                    playbook: '/Users/pavankumar/.jenkins/workspace/Ansible-Project/ansiblePlays/sample.yaml',
+                    inventory: 'inventory',
+                    playbook: 'ansiblePlays/sample.yaml',
                     colorized: true
                 )
                 
