@@ -3,11 +3,13 @@ pipeline{
     stages {
         stage("build"){
             steps{
+                echo "Executing Playbook"
                 ansiblePlaybook(
-                    inventory: 'inventory'
-                    playbook: 'ansiblePlays/sample.yaml'
+                    inventory: 'inventory',
+                    playbook: 'ansiblePlays/sample.yaml',
+                    colorized: true
                 )
-                echo "Hello world"
+                
             }
         }
 
